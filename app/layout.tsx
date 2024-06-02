@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "BIA601 HOMEWORK",
-  description: "Homework for BIA601",
+  description: "Homework for BIA601, د. عصام سلمان",
   icons: { icon: "/favicon.ico" },
 };
 

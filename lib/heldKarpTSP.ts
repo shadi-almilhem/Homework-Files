@@ -43,7 +43,6 @@ export function solveTSP(distanceMatrix: number[][]): {
     };
 
     // Iterate over all nodes to find the minimum cost path.
-
     for (let j = 0; j < n; j++) {
       if (!(mask & (1 << j))) {
         const { cost, paths } = tsp(j, mask | (1 << j)); // Recursive call with updated mask.

@@ -62,13 +62,15 @@ interface FormValues {
 // Main component of the Home page.
 export default function Home() {
   const initialMatrixSize = 3;
+  //fill in the initial matrix with zero values
   const initialMatrix = Array.from({ length: initialMatrixSize }, () =>
     Array.from({ length: initialMatrixSize }, () => 0)
   );
   const [matrix, setMatrix] = useState<number[][]>(initialMatrix); // State for the distance matrix.
 
   const [goods, setGoods] = useState<Good[]>([]); // State for the goods input.
-  const [open, setOpen] = useState(false); // State for dialog open/close.
+
+  //state for storing the result
   const [result, setResult] = useState<Result>({
     knapsack: {
       shipments: [],
@@ -167,7 +169,6 @@ export default function Home() {
       return;
     }
 
-    setOpen(!open);
     setLoading(true); // Start loading spinner.
 
     try {
@@ -181,7 +182,6 @@ export default function Home() {
         truckCapacities: simpleCapacitiesArray,
       };
       console.log(submissionData);
-
       // Send data to the API.
       const response = await fetch("/api", {
         method: "POST",
@@ -201,7 +201,6 @@ export default function Home() {
         knapsack: result.knapsack,
         tsp: result.tsp,
       });
-      setOpen(false); // Close dialog on success.
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
     } finally {
@@ -274,7 +273,7 @@ export default function Home() {
                 } ${loading ? "cursor-not-allowed" : ""}`}
                 disabled={!isConfirmed}
               >
-                Calculate Optimal Solution{" "}
+                Calculate Optimal Solution
                 {loading && <Spinner className="mx-2" size="small" />}
               </button>
             </DialogTrigger>

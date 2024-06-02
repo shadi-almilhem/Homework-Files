@@ -126,21 +126,21 @@ export function knapsackDP(
   };
 }
 
-// Example items
-const items: Item[] = [
-  { name: "Laptop", weight: 3, value: 2000 },
-  { name: "Phone", weight: 1, value: 800 },
-  { name: "Tablet", weight: 2, value: 1500 },
-  { name: "Camera", weight: 1, value: 1200 },
-  { name: "Headphones", weight: 1, value: 300 },
-];
+// // Example items
+// const items: Item[] = [
+//   { name: "Laptop", weight: 3, value: 2000 },
+//   { name: "Phone", weight: 1, value: 800 },
+//   { name: "Tablet", weight: 2, value: 1500 },
+//   { name: "Camera", weight: 1, value: 1200 },
+//   { name: "Headphones", weight: 1, value: 300 },
+// ];
 
-// Example truck capacities
-const truckCapacities = [
-  { index: 1, capacity: 5 },
-  { index: 2, capacity: 10 },
-  { index: 3, capacity: 15 },
-];
+// // Example truck capacities
+// const truckCapacities = [
+//   { index: 1, capacity: 5 },
+//   { index: 2, capacity: 10 },
+//   { index: 3, capacity: 15 },
+// ];
 
-const dpResult = knapsackDP(items, truckCapacities);
-console.log("Multiple Shipments Result:", dpResult);
+// const dpResult = knapsackDP(items, truckCapacities);
+// console.log("Multiple Shipments Result:", dpResult);

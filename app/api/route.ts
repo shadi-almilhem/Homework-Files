@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
     );
     // Call the knapsack function with the parsed data
     const knapsackResult = knapsackDP(items, truckCapacities);
+    // Call the held-karp TSP function with the data
     const heldkarpTSP_Result = solveTSP(matrix);
 
     const result = {
